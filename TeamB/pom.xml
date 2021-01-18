@@ -188,6 +188,7 @@
 		    <version>1.9.13</version>
 		</dependency> 	
 		
+<<<<<<< HEAD
 		
 		<!-- 이메일 인증 -->
 		<dependency>
@@ -202,6 +203,15 @@
 			<artifactId>spring-context-support</artifactId>
 			<version>5.2.0.RELEASE</version>
 		</dependency>	  
+=======
+		<!-- https://mvnrepository.com/artifact/javax.activation/activation -->
+		<dependency>
+		    <groupId>javax.activation</groupId>
+		    <artifactId>activation</artifactId>
+		    <version>1.1</version>
+		</dependency>
+					  
+>>>>>>> 210115
 	</dependencies>
     <build>
         <plugins>
