@@ -12,23 +12,11 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-<<<<<<< HEAD
-=======
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
->>>>>>> 7f56b08f29ba66f511b89ccbd501c2cd20171f81
 
 import com.skylibrary.service.ApplyBookService;
 import com.skylibrary.service.RentService;
-<<<<<<< HEAD
 import com.skylibrary.service.UserService;
-<<<<<<< HEAD
 import com.skylibrary.vo.ApplyBookVO;
-=======
-=======
-import com.skylibrary.vo.BookVO;
->>>>>>> 210115
->>>>>>> 7f56b08f29ba66f511b89ccbd501c2cd20171f81
 import com.skylibrary.vo.RentVO;
 import com.skylibrary.vo.UserVO;
 
@@ -106,7 +94,6 @@ public class MyPageController {
 		System.out.println("In MyPageController (value=/wishCheck)");
 	
 		System.out.println("Out MyPageController (value=/wishCheck)");
-		//�씗留앸룄�꽌 �떊泥� 紐⑸줉 議고쉶
 		return "/User/myPage/wishCheck";
 	}
 	

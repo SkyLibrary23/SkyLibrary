@@ -188,22 +188,6 @@
 		    <version>1.9.13</version>
 		</dependency> 	
 		
-<<<<<<< HEAD
-		
-		<!-- 이메일 인증 -->
-		<dependency>
-			<groupId>javax.mail</groupId>
-			<artifactId>mail</artifactId>
-			<version>1.4.7</version>
-		</dependency>
-
-		<!-- https://mvnrepository.com/artifact/org.springframework/spring-context-support -->
-		<dependency>
-			<groupId>org.springframework</groupId>
-			<artifactId>spring-context-support</artifactId>
-			<version>5.2.0.RELEASE</version>
-		</dependency>	  
-=======
 		<!-- https://mvnrepository.com/artifact/javax.activation/activation -->
 		<dependency>
 		    <groupId>javax.activation</groupId>
@@ -211,7 +195,6 @@
 		    <version>1.1</version>
 		</dependency>
 					  
->>>>>>> 210115
 	</dependencies>
     <build>
         <plugins>

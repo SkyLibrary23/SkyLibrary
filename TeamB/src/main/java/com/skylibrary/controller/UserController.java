@@ -5,12 +5,12 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.skylibrary.service.UserService;
+import com.skylibrary.vo.SessionVO;
 import com.skylibrary.vo.UserVO;
 
 @Controller
@@ -25,11 +25,11 @@ public class UserController {
 	
 	//로그인
 	@RequestMapping(value = "/loginout/login", method = RequestMethod.POST) 
-	public String login(UserVO vo, HttpServletRequest req, RedirectAttributes rttr) throws Exception
+	public String login(SessionVO vo, HttpServletRequest req, RedirectAttributes rttr) throws Exception
 	{
 		HttpSession session = req.getSession(true);
 		
-		UserVO login = userService.login(vo);
+		SessionVO login = userService.login(vo);
 		
 		if(login == null ) {
 			session.setAttribute("user", null);
