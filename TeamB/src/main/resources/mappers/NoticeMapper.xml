@@ -108,7 +108,11 @@
 	INSERT INTO 
 		notice (managerID, noticeTitle, noticeBody, noticeDate, noticeFile)
 	VALUES 
-		(#{managerID}, #{title}, #{ir1}, now(), #{fname})
+<<<<<<< HEAD
+		(#{userID}, #{title}, #{ir1}, now(), #{fname})
+=======
+		(#{userID}, #{noticeTitle}, #{noticeBody}, now(), #{noticeFile})
+>>>>>>> 210115
 </insert>
 
 </mapper>

@@ -18,8 +18,16 @@ public class UserDAO {
 	
 	private static final String namespace = "com.skylibrary.mappers.userMapper";
 	
+<<<<<<< HEAD
 	//로그인
+<<<<<<< HEAD
 	public SessionVO login(SessionVO vo) throws Exception {
+=======
+	public UserVO login(UserVO vo) throws Exception {
+=======
+	public SessionVO login(SessionVO vo) throws Exception {
+>>>>>>> 210115
+>>>>>>> f9fdb124cc98c3afa245c33748a8230824d01e3d
 		return sql.selectOne(namespace + ".login", vo);
 	}
 	

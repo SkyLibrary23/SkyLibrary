@@ -15,16 +15,36 @@
 	userEmail,
 	userEmailDomain
 </sql>
+<<<<<<< HEAD
 <select id="login" parameterType="sessionVO" resultType="sessionVO">
+=======
+<<<<<<< HEAD
+<select id="login" parameterType="userVO" resultType="userVO">
+>>>>>>> f9fdb124cc98c3afa245c33748a8230824d01e3d
 	SELECT <include refid="allColumns"/>
+=======
+
+<select id="login" parameterType="userVO" resultType="sessionVO">
+	SELECT userID,userPW
+>>>>>>> 210115
 	FROM user 
 	WHERE userID = #{userID}
 	AND userPW = md5(#{userPW})
 </select>
+<<<<<<< HEAD
+=======
+
+<!-- <select id="list" resultType="userVO">
+	select 
+	from user
+</select> -->
+
+>>>>>>> 210115
 <select id="userExist" resultType="int" parameterType="userVO">
 	SELECT COUNT(*) FROM user
 	WHERE userID = '#{userID}'
 </select>
+
 <insert id="join" parameterType="userVO">
 	INSERT INTO user
 	(<include refid="allColumns"/>) 

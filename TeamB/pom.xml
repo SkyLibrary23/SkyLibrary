@@ -188,12 +188,16 @@
 		    <version>1.9.13</version>
 		</dependency> 	
 		
+<<<<<<< HEAD
 		<!-- https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-databind -->
 		<dependency>
 		    <groupId>com.fasterxml.jackson.core</groupId>
 		    <artifactId>jackson-databind</artifactId>
 		    <version>2.12.1</version>
 		</dependency>
+=======
+<<<<<<< HEAD
+>>>>>>> f9fdb124cc98c3afa245c33748a8230824d01e3d
 		
 		<!-- 이메일 인증 -->
 		<dependency>
@@ -207,6 +211,7 @@
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-context-support</artifactId>
 			<version>5.2.0.RELEASE</version>
+<<<<<<< HEAD
 		</dependency>	
 		
 		<!-- JSON View -->
@@ -231,6 +236,18 @@
 			<artifactId>joda-time</artifactId>
 			<version>1.6</version>
 		</dependency>  
+=======
+		</dependency>	  
+=======
+		<!-- https://mvnrepository.com/artifact/javax.activation/activation -->
+		<dependency>
+		    <groupId>javax.activation</groupId>
+		    <artifactId>activation</artifactId>
+		    <version>1.1</version>
+		</dependency>
+					  
+>>>>>>> 210115
+>>>>>>> f9fdb124cc98c3afa245c33748a8230824d01e3d
 	</dependencies>
     <build>
         <plugins>
