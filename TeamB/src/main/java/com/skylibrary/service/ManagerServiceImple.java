@@ -20,11 +20,7 @@ public class ManagerServiceImple implements ManagerService {
 	public void mjoin(ManagerVO vo) throws Exception{
 		dao.mjoin(vo);
 	}
-<<<<<<< HEAD
 
-=======
->>>>>>> f9fdb124cc98c3afa245c33748a8230824d01e3d
-	
 	@Override
 	public SessionVO mlogin(SessionVO vo) throws Exception {
 		return dao.mlogin(vo);

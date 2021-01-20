@@ -88,24 +88,7 @@ public class ApplyBookVO {
 //		this.applyType = applyType;
 //	}
 //	
-	@Override
-	public String toString() {
-		return "ApplyBookVO [applyNo=" + applyNo + ", userID=" + userID + ", applyISBN=" + applyISBN + ", applySubject="
-				+ applySubject + ", applyCompany=" + applyCompany + ", applyPublicationDate=" + applyPublicationDate
-				+ ", applyDate=" + applyDate + ", applyOkDate=" + applyOkDate + ", applyWriter=" + applyWriter
-				+ ", applyPrice=" + applyPrice + ", applyType=" + applyType + "]";
-	}
-<<<<<<< HEAD
-=======
-	public void setApplyPrice(String applyPrice) {
-		this.applyPrice = applyPrice;
-	}
-	public int getApplyType() {
-		return applyType;
-	}
-	public void setApplyType(int applyType) {
-		this.applyType = applyType;
-	}
+
 	
 	@Override
 	public String toString() {
@@ -114,5 +97,5 @@ public class ApplyBookVO {
 				+ ", applyDate=" + applyDate + ", applyOkDate=" + applyOkDate + ", applyWriter=" + applyWriter
 				+ ", applyPrice=" + applyPrice + ", applyType=" + applyType + "]";
 	}
->>>>>>> f9fdb124cc98c3afa245c33748a8230824d01e3d
+
 }

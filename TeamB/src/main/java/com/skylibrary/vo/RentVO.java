@@ -22,16 +22,7 @@ public class RentVO {
 	private String rentEndDate; //반납예정일
 	private int    compare; //연장 기준값
 	
-<<<<<<< HEAD
-//	public RentVO() throws ParseException {
-//		setCompare(this.rentStartDate, this.rentEndDate);
-//	}
-//	
-//	public int getCompare() {
-//		return compare;
-//	}
-	public void setCompare(String startDate, String endDate) throws ParseException {
-=======
+
 	public RentVO() throws ParseException {
 		setCompare(this.rentStartDate, this.rentEndDate);
 	}
@@ -41,7 +32,6 @@ public class RentVO {
 	}
 	
 	public void setCompare(String rentStartDate, String rentEndDate) throws ParseException {
->>>>>>> f9fdb124cc98c3afa245c33748a8230824d01e3d
 		
 		SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
 		Date start_d = dateFormat.parse(rentStartDate);
@@ -56,7 +46,7 @@ public class RentVO {
 		
 		this.compare = end_d.compareTo(startadd_d);
 	}
-<<<<<<< HEAD
+
 //	public String getBookSubject() {
 //		return bookSubject;
 //	}
@@ -91,43 +81,7 @@ public class RentVO {
 //	public String getRentStartDate() {
 //		return rentStartDate;
 //	}
-=======
-	
-	public String getBookSubject() {
-		return bookSubject;
-	}
-	public void setBookSubject(String bookSubject) {
-		this.bookSubject = bookSubject;
-	}
 
-	public String getBookWriter() {
-		return bookWriter;
-	}
-	public void setBookWriter(String bookWriter) {
-		this.bookWriter = bookWriter;
-	}
-	public int getRentNo() {
-		return rentNo;
-	}
-	public void setRentNo(int rentNo) {
-		this.rentNo = rentNo;
-	}
-	public String getUserID() {
-		return userID;
-	}
-	public void setUserID(String userID) {
-		this.userID = userID;
-	}
-	public String getBookISBN() {
-		return bookISBN;
-	}
-	public void setBookISBN(String bookISBN) {
-		this.bookISBN = bookISBN;
-	}
-	public String getRentStartDate() {
-		return rentStartDate;
-	}
->>>>>>> f9fdb124cc98c3afa245c33748a8230824d01e3d
 	public void setRentStartDate(String rentStartDate) {
 		String[] array = rentStartDate.split(" ");
 		this.rentStartDate = array[0];

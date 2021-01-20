@@ -1,30 +1,15 @@
 package com.skylibrary.service;
 
-<<<<<<< HEAD
 import java.util.List;
-
-<<<<<<< HEAD
 import com.skylibrary.vo.SessionVO;
-=======
-=======
-import com.skylibrary.vo.SessionVO;
->>>>>>> 210115
->>>>>>> f9fdb124cc98c3afa245c33748a8230824d01e3d
 import com.skylibrary.vo.UserVO;
 
 public interface UserService {
 	
 	//로그인하기
-<<<<<<< HEAD
+
 	public SessionVO login(SessionVO vo) throws Exception;
-=======
-<<<<<<< HEAD
-	public UserVO login(UserVO vo) throws Exception;
-=======
-	public SessionVO login(SessionVO vo) throws Exception;
->>>>>>> 210115
->>>>>>> f9fdb124cc98c3afa245c33748a8230824d01e3d
-	
+
 	//회원가입
 	public void join(UserVO vo) throws Exception;
 	
