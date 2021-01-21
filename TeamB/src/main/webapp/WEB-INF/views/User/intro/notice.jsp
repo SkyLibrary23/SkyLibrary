@@ -50,15 +50,13 @@
 						<tr class="top_tr">
 							<th align="center" class="top_td">글번호</th>
 							<th align="center" class="top_td">제목</th>
-							<th align="center" class="top_td">작성자</th>
 							<th align="center" class="top_td">작성일</th>
 							<th align="center" class="top_td">조회수</th>
 						</tr>
 						<c:forEach var="list" items="${noticeList}" varStatus="status">
 						<tr class="mid_tr">
-							<th align="center" class="mid_td">${status.count + paging.start}</th>
-							<td><a href="/intro/notice/view?noticeNo=${list.noticeNo }" class="mid_td">${list.noticeTitle }</a></td>
-							<td align="center" class="mid_td">${list.managerID }</td>
+							<th align="center" class="mid_td">${list.noticeNo}</th>
+							<td><a href="/intro/notice/view?noticeNo=${list.noticeNo}" class="mid_td">${list.noticeTitle }</a></td>
 							<td align="center" class="mid_td">${list.noticeDate }</td>
 							<td align="center" class="mid_td">${list.noticeHit }</td>
 						</tr>												

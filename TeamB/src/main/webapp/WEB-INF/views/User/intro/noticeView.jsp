@@ -34,9 +34,9 @@
 			<nav class="left_menu">
 				<ul>
 					<li class="left_menu_title">도서관 소개</li>
-					<a href="/notice"><li class="on left_menu_sub">공지사항</li></a>
-					<a href="/calendar"><li class="left_menu_sub">월별 일정</li></a>
-					<a href="/path"><li class="left_menu_sub last_sub">오시는 길</li></a>
+					<a href="/intro/notice"><li class="on left_menu_sub">공지사항</li></a>
+					<a href="/intro/calendar"><li class="left_menu_sub">월별 일정</li></a>
+					<a href="/intro/path"><li class="left_menu_sub last_sub">오시는 길</li></a>
 				</ul>
 			</nav>
 			<div class="section">
@@ -48,37 +48,37 @@
 					<table width="1200px">
 						<tr class="top_tr">
 							<th align="center" height="40px" width="15%" class="top_td" width="50">제목</th>
-							<td colspan="2" class="top_td">${noticeVO.noticeTitle}</td>	
+							<td colspan="2" class="top_td">&nbsp;&nbsp;${noticeVO.noticeTitle}</td>	
 						</tr>		
 						<tr class="mid_tr">
 							<th align="center">작성일</th>
-							<td>${noticeVO.noticeDate}</td>
+							<td>&nbsp;&nbsp;${noticeVO.noticeDate}</td>
 						</tr>
 						<tr class="mid_tr">
 							<th align="center">조회수</th>
-							<td>${noticeVO.noticeHit}</td>
+							<td>&nbsp;&nbsp;${noticeVO.noticeHit}</td>
 						</tr>	
 						<tr class="mid_tr">
 							<th align="center" height="400px" class="mid_tr">내용</th>
 							<td colspan="2">
-							
-								<c:if test="${noticeVO.noticeFile != null}">
-									<img src="../../Manager/mnotice/noticeFileDown.jsp?type=img&nfile=${noticeVO.noticeFile}">
-									${noticeVO.noticeBody}
-								</c:if>
-								<c:if test="${noticeVO.noticeFile eq null}">
-									${noticeVO.noticeBody}
-								</c:if>
-								
+							&nbsp;&nbsp;
+							<c:choose>  
+							    <c:when test="${noticeVO.noticeFile != null}"> 
+							    	<c:out value="${noticeVO.noticeBody}"/>
+							    	<br> 
+									<img src="/upload/${noticeVO.noticeFile}">
+							    </c:when>  
+							    <c:otherwise>  
+							        <c:out value="${noticeVO.noticeBody}"/>
+							    </c:otherwise>   
+							</c:choose> 											
 							</td>	
 						</tr>
 						<tr class="mid_tr">
 							<th align="center" height="50px">첨부파일</th>
-							<td colspan="2">
-							
+							<td colspan="2">		
 								<c:if test="${noticeVO.noticeFile != null}">
-									<img src="../../Manager/mnotice/noticeFileDown.jsp?type=img&nfile=${noticeVO.noticeFile}">
-									${noticeVO.noticeFile}
+									<a href="/Manager/mnotice/noticeFileDown?fileName=${noticeVO.noticeFile}"><c:out value="${noticeVO.noticeFile}"/></a>
 								</c:if>
 								
 							</td>

@@ -9,6 +9,7 @@ import org.springframework.stereotype.Repository;
 
 import com.skylibrary.vo.BookVO;
 import com.skylibrary.vo.RecommendVO;
+import com.skylibrary.vo.SearchVO;
 
 @Repository
 public class RecommendDAO {
@@ -19,8 +20,8 @@ public class RecommendDAO {
 	private static String namespace = "com.skylibrary.mappers.recommendMapper";
 	
 	//도서 통합 목록
-	public List<BookVO> list() throws Exception {
-		return sql.selectList(namespace + ".mRecommend");
+	public List<BookVO> list(SearchVO vo) throws Exception {
+		return sql.selectList(namespace + ".mRecommend", vo);
 	}
 	
 	//도서 상세페이지

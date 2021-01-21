@@ -36,8 +36,7 @@
 			noticeBody,
 			noticeDate,
 			noticeHit,
-			noticeFile   
-			
+			noticeFile   			
 	FROM notice
 	WHERE 1=1
 	<if test="searchText neq null">
@@ -56,6 +55,7 @@
 			AND noticeTitle like CONCAT('%',#{searchText},'%')
 		</if>
 	</if>
+	ORDER BY noticeDate desc
 	LIMIT #{start},#{end}
 </select>
 
@@ -98,7 +98,7 @@
 		noticeHit,
 		noticeFile 
 	FROM notice
-	ORDER BY noticeNo desc
+	ORDER BY noticeDate desc
 	LIMIT #{start},#{end}	  
 </select>
 

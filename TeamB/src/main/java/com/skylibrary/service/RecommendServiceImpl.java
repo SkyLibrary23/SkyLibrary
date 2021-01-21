@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 import com.skylibrary.dao.RecommendDAO;
 import com.skylibrary.vo.BookVO;
 import com.skylibrary.vo.RecommendVO;
+import com.skylibrary.vo.SearchVO;
 
 @Service
 public class RecommendServiceImpl implements RecommendService {
@@ -17,8 +18,8 @@ public class RecommendServiceImpl implements RecommendService {
 	private RecommendDAO dao;
 	
 	@Override
-	public List<BookVO> list() throws Exception{
-		return dao.list();
+	public List<BookVO> list(SearchVO vo) throws Exception{
+		return dao.list(vo);
 	}
 
 	@Override

@@ -40,6 +40,7 @@ public class IntroController {
 	
 	@RequestMapping(value = "/notice")
 	public String list(Model model, SearchVO search, PagingVO paging) throws Exception {
+		
 		System.out.println("In IntroController (value=/notice)");
 		int total = noticeService.countList(search); //10
 		//nowPage 현재페이지 //0

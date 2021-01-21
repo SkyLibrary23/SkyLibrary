@@ -6,10 +6,11 @@ import org.springframework.stereotype.Service;
 
 import com.skylibrary.vo.BookVO;
 import com.skylibrary.vo.RecommendVO;
+import com.skylibrary.vo.SearchVO;
 
 @Service
 public interface RecommendService {
-	public List<BookVO> list() throws Exception;
+	public List<BookVO> list(SearchVO vo) throws Exception;
 	
 	public BookVO recommendView(String isbn) throws Exception;
 	

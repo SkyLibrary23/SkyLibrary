@@ -31,7 +31,7 @@
 				<br>
 				<br>
 				<div class="rselect">
-					<form action="/mrecommend/mRecommend" name="frm" id="frm" method="post">					
+					<form action="/Manager/mrecommend/mRecommend" name="frm" id="frm" method="get">					
 						<select id="select" class="select" name="searchType">
 							<c:if test="${search.searchType eq 'all' }">
 								<option value="all" selected>전체</option>
