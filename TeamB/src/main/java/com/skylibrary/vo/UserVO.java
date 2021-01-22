@@ -20,11 +20,11 @@ public class UserVO {
 	private int    userPostNum;     //우편번호
 	private String userAddr;        //주소
 	private String userAddrDetail;  //상세주소
-	private String userEmail;       //이메일아이디
+	private String userEmailId;     //이메일아이디
 	private String userEmailDomain; //이메일도메인
+	private String userEmail;  
 	private int    userType;        //유저타입 {0:일반회원,1:탈퇴회원,2:강퇴회원}
-	private String userJoinDate;    //가입일
-	
+	private String userJoinDate;    //가입일  
 
 	public UserVO(){
 		setUserNum(this.userNumSplit1, this.userNumSplit2, this.userNumSplit3);
@@ -33,6 +33,5 @@ public class UserVO {
 	public void setUserNum(String userNumSplit1, String userNumSplit2, String userNumSplit3) {
 		this.userNum = userNumSplit1+"-"+userNumSplit2+"-"+userNumSplit3;
 	}
-
 	
 }

@@ -16,7 +16,6 @@
 	userEmailDomain
 </sql>
 
-
 <select id="login" parameterType="sessionVO" resultType="sessionVO">
 	SELECT <include refid="allColumns"/>
 	FROM user 
@@ -24,23 +23,16 @@
 	AND userPW = md5(#{userPW})
 </select>
 
-
-<!-- <select id="list" resultType="userVO">
-	select 
-	from user
-</select> -->
-
 <select id="userExist" resultType="int" parameterType="userVO">
 	SELECT COUNT(*) FROM user
-	WHERE userID = '#{userID}'
+	WHERE userID = #{userID}
 </select>
 
-<select id="userInfoOk" resultType="java.util.Map"  parameterType="sessionVO">
+<select id="userInfoOk" resultType="userVO"  parameterType="sessionVO">
 	SELECT <include refid="allColumns"/>
 	FROM user
 	WHERE userID=#{userID}
 </select>
-
 <select id="userSelectOk" resultType="java.util.Map" parameterType="searchVO">
 	SELECT <include refid="allColumns"/>
 	FROM user
@@ -54,7 +46,6 @@
 	</if>
 	ORDER BY userName ASC
 </select>
-
 <select id="userSearchOk" resultType="java.util.Map" parameterType="searchVO">
 	SELECT <include refid="allColumns" />
 	FROM user
@@ -66,30 +57,47 @@
 	LIKE CONCAT('%',#{searchText},'%')
 	</if>
 </select>
-
-
 <insert id="join" parameterType="userVO">
 	INSERT INTO user
-	(<include refid="allColumns"/>) 
+	(
+	userID,
+	userPW,
+	userName,
+	userNum,
+	<if test="userPostNum != null or userPostNum =='' ">
+	userPostNum,
+	</if> 
+	<if test="userAddr != null or userAddr =='' ">
+	userAddr,
+	</if>
+	<if test="userAddrDetail != null or userAddrDetail =='' ">
+	userAddrDetail,
+	</if>
+	userEmail,
+	userEmailDomain) 
 	VALUE
 	(
 	#{userID},
 	md5(#{userPW}),
 	#{userName},
 	#{userNum},
+	<if test="userPostNum != null or userPostNum =='' ">
 	#{userPostNum},
+	</if>
+	<if test="userAddr != null or userAddr =='' ">
 	#{userAddr},
+	</if>
+	<if test="userAddrDetail != null or userAddrDetail =='' ">
 	#{userAddrDetail},
+	</if>
 	#{userEmail},
 	#{userEmailDomain}
 	)
 </insert>
-
 <select id="userList" resultType="userVO">
 	SELECT <include refid="allColumns"/>
 	FROM user
 </select>
-
 <update id="userModify" parameterType="userVO">
 	UPDATE user 
 	SET  userNum = #{userNum}

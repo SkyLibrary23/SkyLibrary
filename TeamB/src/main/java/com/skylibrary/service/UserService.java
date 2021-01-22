@@ -20,7 +20,6 @@ public interface UserService {
 	//동일 아이디 존재 여부
 	public int userExist(UserVO vo) throws Exception;
 	
-	
 	//유저들 정보 조회
 	public List<UserVO> userList() throws Exception;
 	
@@ -38,5 +37,8 @@ public interface UserService {
 	
 	//유저 삭제 & 유저 탈퇴
 	public void userRemove(SessionVO vo) throws Exception;
+	
+	//아이디 찾기
+	public String FindId(String userNum) throws Exception;
 	
 }

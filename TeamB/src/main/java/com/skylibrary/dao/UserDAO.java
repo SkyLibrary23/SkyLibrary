@@ -71,6 +71,9 @@ public class UserDAO {
 	public List<Map<String,String>> userSelectOk(SearchVO vo) throws Exception {
 		return sql.selectList(namespace + ".userSelectOk", vo);
 	}
-
 	
+	//아이디 찾기
+	public String FindId(String userNum) throws Exception{
+		return sql.selectOne(namespace + ".findId", userNum);
+	}	
 }

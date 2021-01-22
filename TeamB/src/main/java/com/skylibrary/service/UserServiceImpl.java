@@ -60,7 +60,11 @@ public class UserServiceImpl implements UserService {
 	public Map<String, String> userInfoOk(SessionVO vo) throws Exception {
 		return dao.userInfoOk(vo);
 	}
-
+	
+	@Override
+	public String FindId(String userNum) throws Exception {
+		return dao.FindId(userNum);
+	}
 
 
 }

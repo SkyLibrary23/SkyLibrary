@@ -1,15 +1,22 @@
 package com.skylibrary.controller;
 
+import java.io.PrintWriter;
+
 import javax.inject.Inject;
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import com.skylibrary.service.RecommendService;
 import com.skylibrary.service.UserService;
 import com.skylibrary.vo.SessionVO;
 import com.skylibrary.vo.UserVO;
@@ -55,5 +62,20 @@ public class LoginOutController {
 		System.out.println("Out LoginoutController (value=/loginout/logout)");
 		return "redirect:/";
 	}
+	
+	//아이디 찾기 
+	@RequestMapping(value="/findId")
+	public String findId() throws Exception {
+		
+			return "/User/loginout/findId";		
+	}
 
+	@RequestMapping(value="/findIdAjax", method=RequestMethod.POST)
+	@ResponseBody
+	public String findIdAjax(String userNum, Model model, HttpServletRequest request, HttpServletResponse response) throws Exception {
+			
+			String userID = userService.FindId(userNum);
+			
+			return userID;		
+	}
 }

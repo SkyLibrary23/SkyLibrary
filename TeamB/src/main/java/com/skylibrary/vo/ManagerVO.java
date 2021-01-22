@@ -1,43 +1,35 @@
 package com.skylibrary.vo;
 
-public class ManagerVO {
+import lombok.Getter;
+import lombok.Setter;
+import lombok.ToString;
+
+@Setter
+@Getter
+@ToString
+public class ManagerVO extends SessionVO{
 	
-	private String managerID;          //사서아이디
+	private String userID;             //사서아이디
 	private String managerPW;          //사서비밀번호
 	private String managerName;        //사서이름
+	private String managerNum;
+	private String managerNumSplit1;
+	private String managerNumSplit2;
+	private String managerNumSplit3;
 	private String managerEmail;       //사서 이메일아이디
+	private String managerEmailID;
 	private String managerEmailDomain; //사서 이메일도메인
+	private String managerPostNum;
+	private String managerAddr;
+	private String managerAddrDetail;
 	
-	public String getManagerID() {
-		return managerID;
-	}
-	public void setManagerID(String managerID) {
-		this.managerID = managerID;
-	}
-	public String getManagerPW() {
-		return managerPW;
-	}
-	public void setManagerPW(String managerPW) {
-		this.managerPW = managerPW;
-	}
-	public String getManagerName() {
-		return managerName;
-	}
-	public void setManagerName(String managerName) {
-		this.managerName = managerName;
-	}
-	public String getManagerEmail() {
-		return managerEmail;
-	}
-	public void setManagerEmail(String managerEmail) {
-		this.managerEmail = managerEmail;
-	}
-	public String getManagerEmailDomain() {
-		return managerEmailDomain;
-	}
-	public void setManagerEmailDomain(String managerEmailDomain) {
-		this.managerEmailDomain = managerEmailDomain;
+	public void setManagerEmail(String managerEmailID, String managerEmailDomain) {
+		this.managerEmail = managerEmailID+"@"+managerEmailDomain;
 	}
 	
+	public void setManagerNum(String managerNumSplit1, String managerNumSplit2, String managerNumSplit3) 
+	{
+		this.managerNum = managerNumSplit1+"-"+managerNumSplit2+"-"+managerNumSplit3;
+	}
 	
 }
