@@ -7,7 +7,8 @@ function returnFn(node, id, isbn){
 					success : function(data){
 						$(node).parent().parent().remove();
 					}	
-				});			
+				});
+				alert("반납이 완료되었습니다.");
 			}
 		}
 		

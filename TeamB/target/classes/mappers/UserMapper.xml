@@ -49,4 +49,10 @@
 	#{userEmailDomain}
 	)
 </insert>
+
+<select id="fingId"	parameterType="userVO" resultType="sessionVO">
+	SELECT userId 
+	FROM user
+	WHERE userEmail = #{userEmail}
+</select>
 </mapper>
