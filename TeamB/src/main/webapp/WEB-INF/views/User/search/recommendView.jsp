@@ -90,7 +90,7 @@
 							</div>					
 							<br>
 							<br>
-							<button type="button" onclick="location.href='recommend.jsp'" class="listbtn">목록으로</button>
+							<button type="button" onclick="location.href='recommend'" class="listbtn">목록으로</button>
 						</div>
 					</div>	
 				</div>

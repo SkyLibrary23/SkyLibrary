@@ -16,12 +16,14 @@
 	userEmailDomain
 </sql>
 
-<select id="login" parameterType="userVO" resultType="sessionVO">
-	SELECT userID,userPW
+
+<select id="login" parameterType="sessionVO" resultType="sessionVO">
+	SELECT <include refid="allColumns"/>
 	FROM user 
 	WHERE userID = #{userID}
 	AND userPW = md5(#{userPW})
 </select>
+
 
 <!-- <select id="list" resultType="userVO">
 	select 
@@ -32,6 +34,39 @@
 	SELECT COUNT(*) FROM user
 	WHERE userID = '#{userID}'
 </select>
+
+<select id="userInfoOk" resultType="java.util.Map"  parameterType="sessionVO">
+	SELECT <include refid="allColumns"/>
+	FROM user
+	WHERE userID=#{userID}
+</select>
+
+<select id="userSelectOk" resultType="java.util.Map" parameterType="searchVO">
+	SELECT <include refid="allColumns"/>
+	FROM user
+	WHERE 1=1
+	<if test="selectType != null and selectType != ''">
+	AND	userType=#{userType}
+	</if>
+	<if test="startDate != null and endDate != null
+	and startDate != '' and endDate != ''">
+	AND userJoinDate BETWEEN #{startDate} AND #{endDate}
+	</if>
+	ORDER BY userName ASC
+</select>
+
+<select id="userSearchOk" resultType="java.util.Map" parameterType="searchVO">
+	SELECT <include refid="allColumns" />
+	FROM user
+	WHERE 1=1
+	<if test="searchType != null">
+	AND #{searchType}
+	</if>
+	<if test="searchText != null">
+	LIKE CONCAT('%',#{searchText},'%')
+	</if>
+</select>
+
 
 <insert id="join" parameterType="userVO">
 	INSERT INTO user
@@ -50,9 +85,35 @@
 	)
 </insert>
 
-<select id="fingId"	parameterType="userVO" resultType="sessionVO">
-	SELECT userId 
+<select id="userList" resultType="userVO">
+	SELECT <include refid="allColumns"/>
 	FROM user
-	WHERE userEmail = #{userEmail}
 </select>
+
+<update id="userModify" parameterType="userVO">
+	UPDATE user 
+	SET  userNum = #{userNum}
+		,userEmail = #{userEmail}
+		,userEmailDomain = #{userEmailDomain}
+		,userName = #{userName}
+		<if test="#{userPostNum != null}">
+		,userPostNum = #{userPostNum}
+		</if>
+		<if test="#{userAddr != null}">
+		,userAddr = #{userAddr}	
+		</if>
+		<if test="#{userAddrDetail != null}">
+		,userAddrDetail = #{userAddrDetail}
+		</if>
+	WHERE userID = #{userID}
+</update>
+<update id="userPWModify" parameterType="userVO">
+	UPDATE user
+	SET userPW = md5('#{userPW}')
+	WHERE userID = #{userID}
+</update>
+<delete id="userRemove" parameterType="sessionVO">
+	DELETE FROM user 
+	WHERE userID = #{userID}
+</delete>
 </mapper>
